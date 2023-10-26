@@ -5,7 +5,7 @@ const mongoose=require("mongoose");
 
 
 // Post
-studentRoute.post("/create-student/",(req,res)=>{
+studentRoute.post("/create-student",(req,res)=>{
     studentSchema.create(req.body,(err,data)=>{
         if(err)
             return err;
