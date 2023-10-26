@@ -9,7 +9,7 @@ function CreateStudent() {
 
         alert("Creating a record...");
         const data={name:arr[0],email:arr[1],rollno:arr[2]};
-        Axios.post("https://test-first-mern-stack.onrender.com/create-student",data)
+        Axios.post("https://test-first-mern-stack.onrender.com/student/create-student",data)
         .then((res)=>{
             if(res.status === 200){
                 alert("Record Added to Db")
