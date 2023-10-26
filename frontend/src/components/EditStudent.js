@@ -9,7 +9,7 @@ function EditStudent() {
   const[newData,setNewData]=useState([]);
   const [data, setdata] = useState({ name: " ", email: " ", rollno:" " });
   useEffect(() => {
-    Axios.get(`http://localhost:4000/student/update-student/${id}`)
+    Axios.get(`https://test-first-mern-stack.onrender.com/student/update-student/${id}`)
       .then((res) => {
         if (res.status === 200) {
           const { name, email, rollno } = res.data;
@@ -27,7 +27,7 @@ function EditStudent() {
   const handleSubmit = () => {
     
     const newObj = { name: newData[0], email: newData[1], rollno: newData[2] };
-    Axios.put("http://localhost:4000/student/update-student/"+id, newObj)
+    Axios.put("https://test-first-mern-stack.onrender.com/student/update-student/"+id, newObj)
       .then((res) => {
         if (res.status === 200) {
           const { name, email, rollno } = res.data;

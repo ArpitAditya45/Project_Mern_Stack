@@ -5,7 +5,7 @@ const mongoose=require("mongoose");
 
 
 // Post
-studentRoute.post("/create-student",(req,res)=>{
+studentRoute.post("/create-student/",(req,res)=>{
     studentSchema.create(req.body,(err,data)=>{
         if(err)
             return err;
@@ -38,7 +38,6 @@ studentRoute.route("/update-student/:id")
 })
 // update
 .put((req,res)=>{
-    console.log("AAAAAAAA___________________________-------------------");
     studentSchema.findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id),
     {$set: req.body},
     (err,data)=>{
