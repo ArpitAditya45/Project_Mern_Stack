@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function StudentForm(props){
     const [name,setName] = useState(props.nameValue);
@@ -9,6 +9,12 @@ function StudentForm(props){
     function handleClick(){
         props.getState(arr);
     }
+    useEffect(()=>{
+        setName(props.nameValue);
+        setemail(props.emailValue);
+        setrollNo(props.rollNoValue);
+    },[props.nameValue,props.emailValue,props.rollNoValue]);
+
     return(
         <>
         <div style={{maxWidth:"50%",margin:"0px auto"}}>
